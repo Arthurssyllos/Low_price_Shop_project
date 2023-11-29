@@ -1,0 +1,368 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-around; /* Espaço ao redor dos cards */
+    align-items: flex-start; /* Alinha os cards no topo */
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    margin-bottom: 20px; /* Adiciona margem na parte inferior do card */
+    position: relative;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.additional-fields {
+    display: none; /* Oculta os campos adicionais por padrão */
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 20px;
+}
+
+
+.Btn2 {
+    font-size: 18px;
+    color: #e1e1e1;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+  }
+  
+  .Btn2:focus,
+  .Btn2:hover {
+    color: #fff;
+  }
+  
+  .Btn2:focus:after,
+  .Btn2:hover:after {
+    width: 100%;
+    left: 0%;
+  }
+  
+  .Btn2:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+  }
+
+
+
+.Btn {
+    width: 130px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(15, 15, 15);
+    border: none;
+    color: white;
+    font-weight: 600;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+  }
+  
+  .svgIcon {
+    width: 16px;
+  }
+  
+  .svgIcon path {
+    fill: white;
+  }
+  
+  .Btn::before {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    content: "";
+    background-color: white;
+    border-radius: 50%;
+    left: -100%;
+    top: 0;
+    transition-duration: .3s;
+    mix-blend-mode: difference;
+  }
+  
+  .Btn:hover::before {
+    transition-duration: .3s;
+    transform: translate(100%,-50%);
+    border-radius: 0;
+  }
+  
+  .Btn:active {
+    transform: translate(5px,5px);
+    transition-duration: .3s;
+  }
+
+
+#search-bar {
+    display: flex;
+    align-items: center;
+    margin-right: 0;
+    margin-left: auto;
+    background-color: transparent; /* Torna a barra de busca transparente */
+    border-bottom: 1px solid #fff; /* Adiciona uma linha branca na parte inferior */
+    padding-bottom: 5px; /* Adiciona algum espaço para a linha branca ser visível */
+}
+
+
+#search-bar input {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    height: 30px;
+    background-color: transparent;
+    flex: 1 0 auto;
+    color: white;
+    outline: none; /* Remove a borda padrão quando o input está focado */
+}
+
+#search-bar input::placeholder {
+    color: #ccc; /* Define a cor do texto de placeholder */
+}
+
+#search-bar input:focus::placeholder {
+    color: transparent; /* Oculta o texto de placeholder quando o input está focado */
+}
+
+#search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    min-width: 0; /* Adicione esta linha para definir a largura mínima como 0 */
+    width: auto !important;
+    max-width: initial !important;
+    flex: 0 0 auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#lupa-icon {
+    height: 45px; /* Ajuste a largura conforme necessário */
+    width: 25px; /* Ajuste a altura conforme necessário */
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Adicione esta linha para centralizar horizontalmente */
+    margin: 0 auto; /* Remova a linha margin-right e adicione esta para centralizar na tela */
+    text-align: center; /* Adicione esta linha para centralizar o texto */
+}
+
+#logo img {
+    max-height: 50px;
+    margin-right: 10px; /* Adicione esta linha para dar espaço entre a imagem e o texto */
+}
+
+#logo h1 {
+    font-size: 1.5em;
+    margin-left: 10px;
+}
+
+#logo p {
+    font-size: 1.2em; /* Mantenha esta linha se precisar ajustar o tamanho do texto */
+    margin: 0; /* Mantenha esta linha para remover margens padrão */
+    color: white;
+}
+
+#user-options {
+    display: flex;
+    align-items: center;
+}
+
+#user-options a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+
+#categories ul li a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: black; /* Define a cor do texto como preta */
+}
+
+#categories {
+    background-color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#categories ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+#categories li {
+    margin-right: 10px;
+}
+@media only screen and (max-width: 768px) {
+    #search-bar {
+        margin-top: 10px;
+    }
+
+    #user-options {
+        margin-top: 10px;
+    }
+
+    #categories {
+        display: flex;
+        margin-top: 10px;
+    }
+
+    #categories ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+    }
+
+    #categories li {
+        margin-right: 10px;
+    }
+}
+
+main {
+    padding: 20px;
+    flex: 1; /* Faz com que o main ocupe o espaço restante verticalmente */
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: black;
+}
+
+.product-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.product-card {
+    flex: 0 0 auto;
+    margin-right: 20px;
+    scroll-snap-align: start;
+}
+
+.recebernovidades_texto{
+
+    color: #fff;
+}
+
+#newsletter {
+    background-color: transparent;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+#newsletter form {
+    margin-top: 20px;
+}
+
+#newsletter input {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+}
+
+#newsletter button {
+    background-color: #fff;
+    color: black;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: black;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto; /* Empurra o footer para a parte inferior da página */
+}
+
+#informacoes ul {
+    list-style: none;
+    padding: 0;
+}
+
+#informacoes li {
+    margin-bottom: 10px;
+}
+
+#informacoes a {
+    text-decoration: none;
+    color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+    /* Adaptações para telas menores, se necessário */
+    #search-bar {
+        margin-top: 10px;
+    }
+
+    #user-options {
+        margin-top: 10px;
+    }
+
+    #categories {
+        display: flex; /* Exibindo as categorias em telas menores */
+        margin-top: 10px;
+    }
+
+    #categories ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+    }
+
+    #categories li {
+        margin-right: 10px;
+    }
+}
